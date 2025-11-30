@@ -1,10 +1,10 @@
-package com.theshubhamco.designprinciple.srp.example1.bad;
+package com.theshubhamco.designprinciple.srp.example1.bad.model;
 
 import java.io.FileWriter;
 import java.io.IOException;
 
 // ❌ Violates SRP: Employee handles multiple responsibilities (data + formatting + persistence)
-class Employee {
+public class Employee {
     private String name;
     private String type; // Employee type: Full-time, Contract, Intern
 
@@ -23,18 +23,5 @@ class Employee {
         } catch (IOException e) {
             e.printStackTrace(); // ❌ SRP violation: exception handling is also a separate concern
         }
-    }
-}
-
-//What client has to do!
-public class EmployeeBadDesign {
-    public static void main(String args[]) {
-        Employee fullTimeEmployee = new Employee("Shubham", "FULLTIME");
-        Employee contractEmployee = new Employee("Ashwarya", "CONTRACT");
-        Employee internEmployee = new Employee("Arvind", "INTERN");
-
-        fullTimeEmployee.save();
-        contractEmployee.save();
-        internEmployee.save();
     }
 }
