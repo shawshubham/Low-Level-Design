@@ -4,6 +4,7 @@ import com.theshubhamco.designprinciple.solid.srp.finalrefactoredversion.model.E
 
 import java.io.IOException;
 import java.util.logging.Logger;
+import static java.util.logging.Level.SEVERE;
 
 public class EmployeeService {
     private static Logger logger = Logger.getLogger(EmployeeService.class.getName());
@@ -21,8 +22,8 @@ public class EmployeeService {
         try {
             employeeFileSaver.saveToFile(formatted);
         } catch (IOException e) {
-            logger.severe("Error saving employee data: " + e.getMessage());
-            // optionally re-throw or handle differently in production
+            logger.log(SEVERE, "Error saving employee data for " + employee.getName(), e);
+            throw new RuntimeException("Failed to save employee data", e); // signal failure to callers
         }
     }
 }
