@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public class EmployeeService {
-    private static Logger logger = Logger.getLogger(EmployeeService.class.getName());
+    private static final Logger logger = Logger.getLogger(EmployeeService.class.getName());
 
-    private EmployeeFormatter employeeFormatter;
+    private final EmployeeFormatter employeeFormatter;
     private EmployeeFileSaver employeeFileSaver;
     private EmployeeDBSaver employeeDBSaver;
     private EmployeeRemoteAPISaver employeeRemoteAPISaver;

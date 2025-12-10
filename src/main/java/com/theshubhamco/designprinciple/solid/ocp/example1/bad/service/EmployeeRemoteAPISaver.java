@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 
 //Simulated
 public class EmployeeRemoteAPISaver {
-    private static final Logger logger = Logger.getLogger(EmployeeDBSaver.class.getName());
+    private static final Logger logger = Logger.getLogger(EmployeeRemoteAPISaver.class.getName());
 
     public void saveToAPI(String formattedData) {
         //Simulate calling API call

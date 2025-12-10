@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public class EmployeeFilePersistenceStrategy implements EmployeePersistenceStrategy{
-    private final static Logger logger = Logger.getLogger(EmployeeFilePersistenceStrategy.class.getName());
+    private static final Logger logger = Logger.getLogger(EmployeeFilePersistenceStrategy.class.getName());
 
     private final String filePath;
 

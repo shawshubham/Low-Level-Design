@@ -8,10 +8,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class EmployeeService {
-    private static Logger logger = Logger.getLogger(EmployeeService.class.getName());
+    private static final Logger logger = Logger.getLogger(EmployeeService.class.getName());
 
-    private EmployeeFormatter employeeFormatter;
-    private EmployeePersistenceStrategy persistenceStrategy;
+    private final EmployeeFormatter employeeFormatter;
+    private final EmployeePersistenceStrategy persistenceStrategy;
 
     public EmployeeService(EmployeeFormatter employeeFormatter,
                            EmployeePersistenceStrategy persistenceStrategy) {
