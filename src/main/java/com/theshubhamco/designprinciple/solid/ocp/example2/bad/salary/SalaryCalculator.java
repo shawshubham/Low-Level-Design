@@ -1,4 +1,4 @@
-package com.theshubhamco.designprinciple.solid.ocp.example2.bad.businesslogic;
+package com.theshubhamco.designprinciple.solid.ocp.example2.bad.salary;
 
 import com.theshubhamco.designprinciple.solid.ocp.example2.bad.model.ContractEmployee;
 import com.theshubhamco.designprinciple.solid.ocp.example2.bad.model.Employee;

@@ -1,8 +1,6 @@
-package com.theshubhamco.designprinciple.solid.ocp.example2.good.businesslogic;
+package com.theshubhamco.designprinciple.solid.ocp.example2.good.salary;
 
 import com.theshubhamco.designprinciple.solid.ocp.example2.good.model.Employee;
-import com.theshubhamco.designprinciple.solid.ocp.example2.good.salarycalculator.SalaryCalculationStrategy;
-import com.theshubhamco.designprinciple.solid.ocp.example2.good.strategyfactory.SalaryStrategyFactory;
 
 public class SalaryCalculator {
     public double calculate(Employee employee) {

@@ -1,10 +1,6 @@
-package com.theshubhamco.designprinciple.solid.ocp.example2.good.strategyfactory;
+package com.theshubhamco.designprinciple.solid.ocp.example2.good.salary;
 
 import com.theshubhamco.designprinciple.solid.ocp.example2.good.model.EmployeeType;
-import com.theshubhamco.designprinciple.solid.ocp.example2.good.salarycalculator.ContractSalaryStrategy;
-import com.theshubhamco.designprinciple.solid.ocp.example2.good.salarycalculator.FullTimeSalaryStrategy;
-import com.theshubhamco.designprinciple.solid.ocp.example2.good.salarycalculator.InternSalaryStrategy;
-import com.theshubhamco.designprinciple.solid.ocp.example2.good.salarycalculator.SalaryCalculationStrategy;
 
 import java.util.Map;
 

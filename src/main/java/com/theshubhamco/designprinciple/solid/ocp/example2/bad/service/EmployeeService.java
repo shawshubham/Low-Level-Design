@@ -1,6 +1,6 @@
 package com.theshubhamco.designprinciple.solid.ocp.example2.bad.service;
 
-import com.theshubhamco.designprinciple.solid.ocp.example2.bad.businesslogic.SalaryCalculator;
+import com.theshubhamco.designprinciple.solid.ocp.example2.bad.salary.SalaryCalculator;
 import com.theshubhamco.designprinciple.solid.ocp.example2.bad.formatter.EmployeeFormatter;
 import com.theshubhamco.designprinciple.solid.ocp.example2.bad.model.Employee;
 import com.theshubhamco.designprinciple.solid.ocp.example2.bad.persistence.EmployeePersistenceStrategy;
