@@ -1,4 +1,4 @@
-## **2 Requirement Change & SRP Under Inheritance**
+## **Requirement Change & SRP Under Inheritance**
 
 ---
 

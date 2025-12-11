@@ -1,4 +1,4 @@
-## 1. Design Problem: Employee Management System
+## Design Problem: Employee Management System
 
 ---
 
