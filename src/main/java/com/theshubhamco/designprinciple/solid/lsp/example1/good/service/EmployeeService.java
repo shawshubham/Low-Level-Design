@@ -1,9 +1,9 @@
-package com.theshubhamco.designprinciple.solid.lsp.example1.bad.service;
+package com.theshubhamco.designprinciple.solid.lsp.example1.good.service;
 
-import com.theshubhamco.designprinciple.solid.lsp.example1.bad.formatter.EmployeeFormatter;
-import com.theshubhamco.designprinciple.solid.lsp.example1.bad.model.Employee;
-import com.theshubhamco.designprinciple.solid.lsp.example1.bad.persistence.EmployeePersistenceStrategy;
-import com.theshubhamco.designprinciple.solid.lsp.example1.bad.salary.SalaryCalculator;
+import com.theshubhamco.designprinciple.solid.lsp.example1.good.formatter.EmployeeFormatter;
+import com.theshubhamco.designprinciple.solid.lsp.example1.good.model.Employee;
+import com.theshubhamco.designprinciple.solid.lsp.example1.good.persistence.EmployeePersistenceStrategy;
+import com.theshubhamco.designprinciple.solid.lsp.example1.good.salary.SalaryCalculator;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,8 +34,8 @@ public class EmployeeService {
         return salary;
     }
 
-    public double calculateDeduction(Employee employee, int daysAbsent){
-        double salaryDeduction = employee.calculateDeduction(daysAbsent);
+    public double calculateDeduction(Employee employee){
+        double salaryDeduction = employee.calculateDeduction();
         logger.log(Level.INFO, String.format("Name: %s, Type: %s, Deductions: %s", employee.getName(), employee.getType(), salaryDeduction));
         return salaryDeduction;
     }

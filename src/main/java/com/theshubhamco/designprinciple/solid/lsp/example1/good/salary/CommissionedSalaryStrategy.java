@@ -1,9 +1,9 @@
-package com.theshubhamco.designprinciple.solid.lsp.example1.bad.salary;
+package com.theshubhamco.designprinciple.solid.lsp.example1.good.salary;
 
-import com.theshubhamco.designprinciple.solid.lsp.example1.bad.model.CommissionedEmployee;
-import com.theshubhamco.designprinciple.solid.lsp.example1.bad.model.Employee;
+import com.theshubhamco.designprinciple.solid.lsp.example1.good.model.CommissionedEmployee;
+import com.theshubhamco.designprinciple.solid.lsp.example1.good.model.Employee;
 
-public class CommissionedSalaryStrategy implements SalaryCalculationStrategy{
+public class CommissionedSalaryStrategy implements SalaryCalculationStrategy {
     @Override
     public double calculate(Employee employee) {
         CommissionedEmployee commissionedEmployee = (CommissionedEmployee) employee;

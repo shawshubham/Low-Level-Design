@@ -1,7 +1,6 @@
-package com.theshubhamco.designprinciple.solid.lsp.example1.bad.salary;
+package com.theshubhamco.designprinciple.solid.lsp.example1.good.salary;
 
-import com.theshubhamco.designprinciple.solid.lsp.example1.bad.model.EmployeeType;
-
+import com.theshubhamco.designprinciple.solid.lsp.example1.good.model.EmployeeType;
 import java.util.Map;
 
 public class SalaryStrategyFactory {
