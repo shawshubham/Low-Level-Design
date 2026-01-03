@@ -51,6 +51,5 @@ public class EmployeeService {
             default:
                 throw new IllegalArgumentException("Unknown destination type");
         }
-
     }
 }
