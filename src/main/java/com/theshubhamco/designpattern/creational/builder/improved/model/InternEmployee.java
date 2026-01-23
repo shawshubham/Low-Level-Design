@@ -5,8 +5,10 @@ import com.theshubhamco.designpattern.creational.builder.improved.deduction.Inte
 public class InternEmployee extends Employee {
     private final double stipend;
 
-    public InternEmployee(String name, double stipend) {
-        super(name, new InternDeductionPolicy());
+    public InternEmployee(String name,
+                          Department department,
+                          double stipend) {
+        super(name, department, new InternDeductionPolicy());
         this.stipend = stipend;
     }
 

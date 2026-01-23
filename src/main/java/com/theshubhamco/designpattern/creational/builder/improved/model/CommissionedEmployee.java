@@ -7,8 +7,12 @@ public class CommissionedEmployee extends Employee {
     private final double monthlySales;
     private final int complianceBreach;
 
-    public CommissionedEmployee(String name, double baseSalary, double monthlySales, int complianceBreach) {
-        super(name, new CommissionedDeductionPolicy());
+    public CommissionedEmployee(String name,
+                                Department department,
+                                double baseSalary,
+                                double monthlySales,
+                                int complianceBreach) {
+        super(name, department, new CommissionedDeductionPolicy());
         this.baseSalary = baseSalary;
         this.monthlySales = monthlySales;
         this.complianceBreach = complianceBreach;

@@ -1,6 +1,6 @@
-package com.theshubhamco.designpattern.creational.builder.naive.model;
+package com.theshubhamco.designpattern.creational.abstractfactory.naive.model;
 
-import com.theshubhamco.designpattern.creational.builder.naive.deduction.ContractDeductionPolicy;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.deduction.ContractDeductionPolicy;
 
 public class ContractEmployee extends Employee {
     private final double hourlyRate;

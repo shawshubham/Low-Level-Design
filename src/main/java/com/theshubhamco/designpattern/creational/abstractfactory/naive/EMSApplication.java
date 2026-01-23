@@ -1,12 +1,12 @@
-package com.theshubhamco.designpattern.creational.builder.improved;
+package com.theshubhamco.designpattern.creational.abstractfactory.naive;
 
-import com.theshubhamco.designpattern.creational.builder.improved.client.ReportingClient;
-import com.theshubhamco.designpattern.creational.builder.improved.formatter.EmployeeFormatter;
-import com.theshubhamco.designpattern.creational.builder.improved.model.*;
-import com.theshubhamco.designpattern.creational.builder.improved.persistence.EmployeePersistenceFactory;
-import com.theshubhamco.designpattern.creational.builder.improved.persistence.PersistenceType;
-import com.theshubhamco.designpattern.creational.builder.improved.salary.SalaryCalculator;
-import com.theshubhamco.designpattern.creational.builder.improved.service.EmployeeService;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.ReportingClient;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.formatter.EmployeeFormatter;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.model.*;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.persistence.EmployeePersistenceFactory;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.persistence.PersistenceType;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.salary.SalaryCalculator;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.EmployeeService;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,14 +16,10 @@ public class EMSApplication {
     private static final String persistenceFileName = "employees.txt";
 
     public static void main(String args[]) {
-        Employee fullTimeEmployee = new FullTimeEmployee("Shubham",
-                Department.ENGINEERING,4500, 3000, 5);
-        Employee contractEmployee = new ContractEmployee("Ashwarya",
-                Department.ACCOUNTING, 11, 40);
-        Employee internEmployee = new InternEmployee("Arvind",
-                Department.ENGINEERING,1000);
-        Employee commissionedEmployee = new CommissionedEmployee("Rakesh",
-                Department.ENGINEERING,3000, 50000, 2);
+        Employee fullTimeEmployee = new FullTimeEmployee("Shubham", Department.ENGINEERING,4500, 3000, 5);
+        Employee contractEmployee = new ContractEmployee("Ashwarya", Department.ACCOUNTING, 11, 40);
+        Employee internEmployee = new InternEmployee("Arvind", Department.ENGINEERING, 1000);
+        Employee commissionedEmployee = new CommissionedEmployee("Rakesh", Department.ENGINEERING,3000, 50000, 2);
 
         EmployeeFormatter formatter = new EmployeeFormatter();
         SalaryCalculator salaryCalculator = new SalaryCalculator();

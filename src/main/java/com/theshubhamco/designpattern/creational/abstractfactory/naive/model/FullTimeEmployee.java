@@ -1,6 +1,6 @@
-package com.theshubhamco.designpattern.creational.builder.naive.model;
+package com.theshubhamco.designpattern.creational.abstractfactory.naive.model;
 
-import com.theshubhamco.designpattern.creational.builder.naive.deduction.FullTimeDeductionPolicy;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.deduction.FullTimeDeductionPolicy;
 
 public class FullTimeEmployee extends Employee {
     private final double baseSalary;

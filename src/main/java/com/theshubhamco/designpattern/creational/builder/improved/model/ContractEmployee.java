@@ -7,8 +7,11 @@ public class ContractEmployee extends Employee {
     private final double hoursWorked;
     public static final double MAX_WORK_TIME = 160; //40 hours a week
 
-    public ContractEmployee(String name, double hourlyRate, double hoursWorked) {
-        super(name, new ContractDeductionPolicy());
+    public ContractEmployee(String name,
+                            Department department,
+                            double hourlyRate,
+                            double hoursWorked) {
+        super(name, department, new ContractDeductionPolicy());
         this.hourlyRate = hourlyRate;
         this.hoursWorked = hoursWorked;
     }

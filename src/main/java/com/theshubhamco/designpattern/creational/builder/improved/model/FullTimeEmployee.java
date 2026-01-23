@@ -7,7 +7,11 @@ public class FullTimeEmployee extends Employee {
     private final double bonus;
     private final int daysAbsent;
 
-    public FullTimeEmployee(String name, Department department, double baseSalary, double bonus, int daysAbsent) {
+    public FullTimeEmployee(String name,
+                            Department department,
+                            double baseSalary,
+                            double bonus,
+                            int daysAbsent) {
         super(name, department, new FullTimeDeductionPolicy());
         this.baseSalary = baseSalary;
         this.bonus = bonus;

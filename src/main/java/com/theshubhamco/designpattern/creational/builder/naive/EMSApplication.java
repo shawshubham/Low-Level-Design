@@ -17,9 +17,9 @@ public class EMSApplication {
 
     public static void main(String args[]) {
         Employee fullTimeEmployee = new FullTimeEmployee("Shubham", Department.ENGINEERING,4500, 3000, 5);
-        Employee contractEmployee = new ContractEmployee("Ashwarya", 11, 40);
-        Employee internEmployee = new InternEmployee("Arvind", 1000);
-        Employee commissionedEmployee = new CommissionedEmployee("Rakesh", 3000, 50000, 2);
+        Employee contractEmployee = new ContractEmployee("Ashwarya", Department.ACCOUNTING, 11, 40);
+        Employee internEmployee = new InternEmployee("Arvind", Department.ENGINEERING, 1000);
+        Employee commissionedEmployee = new CommissionedEmployee("Rakesh", Department.ENGINEERING,3000, 50000, 2);
 
         EmployeeFormatter formatter = new EmployeeFormatter();
         SalaryCalculator salaryCalculator = new SalaryCalculator();

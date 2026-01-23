@@ -1,6 +1,6 @@
-package com.theshubhamco.designpattern.creational.builder.naive.model;
+package com.theshubhamco.designpattern.creational.abstractfactory.naive.model;
 
-import com.theshubhamco.designpattern.creational.builder.naive.deduction.InternDeductionPolicy;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.deduction.InternDeductionPolicy;
 
 public class InternEmployee extends Employee {
     private final double stipend;

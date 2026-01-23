@@ -4,5 +4,6 @@ public enum Department {
     HR,
     ENGINEERING,
     SALES,
-    MARKETING
+    MARKETING,
+    ACCOUNTING
 }
