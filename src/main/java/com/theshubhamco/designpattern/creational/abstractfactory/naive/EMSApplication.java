@@ -1,12 +1,20 @@
 package com.theshubhamco.designpattern.creational.abstractfactory.naive;
 
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.HRClient;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.PayrollClient;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.ReportingClient;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.model.DeliveryChannel;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.model.ExportFormat;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.model.ExportReportRequest;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.model.NotificationType;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.formatter.EmployeeFormatter;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.model.*;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.persistence.EmployeePersistenceFactory;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.persistence.PersistenceType;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.salary.SalaryCalculator;
-import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.EmployeeService;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.HROperationsService;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.PayrollOperationsService;
+import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.ReportingOperationsService;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,34 +34,27 @@ public class EMSApplication {
 
         EmployeePersistenceFactory persistenceFactory = new EmployeePersistenceFactory(persistenceFileName);
 
-        EmployeeService employeeService = new EmployeeService(formatter,
-                persistenceFactory.create(PersistenceType.FILE),
-                salaryCalculator);
+        HROperationsService hrOperationsService = new HROperationsService(formatter,
+                persistenceFactory.create(PersistenceType.FILE));
+        ReportingOperationsService reportingOperationsService = new ReportingOperationsService(salaryCalculator);
 
-        ReportingClient reportingClient = new ReportingClient(employeeService);
+        ReportingClient reportingClient = new ReportingClient(reportingOperationsService);
+        HRClient hrClient = new HRClient(hrOperationsService);
 
         logger.info("adding employees...");
-        employeeService.addEmployee(fullTimeEmployee);
-        employeeService.addEmployee(contractEmployee);
-        employeeService.addEmployee(internEmployee);
+        hrClient.addEmployee(fullTimeEmployee);
+        hrClient.addEmployee(contractEmployee);
+        hrClient.addEmployee(internEmployee);
+        hrClient.addEmployee(commissionedEmployee);
         logger.info("added employees.");
-
-        logger.log(Level.INFO, "Calculating employee salary...");
-        employeeService.calculateSalary(fullTimeEmployee);
-        employeeService.calculateSalary(contractEmployee);
-        employeeService.calculateSalary(internEmployee);
-        employeeService.calculateSalary(commissionedEmployee);
-        logger.log(Level.INFO, "Calculated employee salary");
-
-        logger.log(Level.INFO, "Calculating deduction...");
-        employeeService.calculateDeduction(fullTimeEmployee);
-        employeeService.calculateDeduction(contractEmployee);
-        employeeService.calculateDeduction(internEmployee);
-        employeeService.calculateDeduction(commissionedEmployee);
-        logger.log(Level.INFO, "Calculated deduction");
 
         logger.log(Level.INFO, "Generating EmployeeReport for the provided employee...");
         reportingClient.generateReport(fullTimeEmployee);
+        reportingClient.exportReport(fullTimeEmployee,
+                new ExportReportRequest(ExportFormat.PDF,
+                        DeliveryChannel.EMAIL,
+                        NotificationType.EMAIL,
+                        "receiver@gmail.com", "abc@gmail.com"));
         logger.log(Level.INFO, "Done with EmployeeReport generation.");
     }
 }
