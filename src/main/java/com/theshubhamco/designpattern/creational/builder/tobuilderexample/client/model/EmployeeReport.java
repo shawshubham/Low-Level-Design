@@ -1,7 +1,7 @@
-package com.theshubhamco.designpattern.creational.builder.improved.client.model;
+package com.theshubhamco.designpattern.creational.builder.tobuilderexample.client.model;
 
-import com.theshubhamco.designpattern.creational.builder.improved.model.Department;
-import com.theshubhamco.designpattern.creational.builder.improved.model.EmployeeType;
+import com.theshubhamco.designpattern.creational.builder.tobuilderexample.model.Department;
+import com.theshubhamco.designpattern.creational.builder.tobuilderexample.model.EmployeeType;
 
 import java.time.LocalDate;
 
@@ -38,6 +38,20 @@ public class EmployeeReport {
         private LocalDate joiningDate;
         private LocalDate exitDate;
         private String remarks;
+
+        // Added public no-arg constructor and a private all-args constructor for toBuilder() feature
+        public Builder() {}
+
+        private Builder(EmployeeReport report) {
+            this.name = report.name;
+            this.type = report.type;
+            this.department = report.department;
+            this.salary = report.salary;
+            this.deductions = report.deductions;
+            this.managerName = report.managerName;
+            this.joiningDate = report.joiningDate;
+            this.exitDate = report.exitDate;
+        }
 
         public Builder name(String name) {
             this.name = name;
@@ -102,4 +116,9 @@ public class EmployeeReport {
     public LocalDate getJoiningDate() { return joiningDate; }
     public LocalDate getExitDate() { return exitDate; }
     public String getRemarks() { return remarks; }
+
+    // ToBuilder feature
+    public Builder toBuilder() {
+        return new Builder(this);
+    }
 }

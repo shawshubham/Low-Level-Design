@@ -10,5 +10,5 @@ public class InternEmployee extends Employee {
         return "Intern";
     }
 
-    // You can later add methods like assignBonus(), manageTeam(), etc.
+    // You can later add methods like assignBonus() etc.
 }

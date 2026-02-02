@@ -1,14 +1,14 @@
-package com.theshubhamco.designpattern.creational.builder.improved.service;
+package com.theshubhamco.designpattern.creational.builder.stagedbuilder.service;
 
-import com.theshubhamco.designpattern.creational.builder.improved.client.model.EmployeeReport;
-import com.theshubhamco.designpattern.creational.builder.improved.formatter.EmployeeFormatter;
-import com.theshubhamco.designpattern.creational.builder.improved.model.Employee;
-import com.theshubhamco.designpattern.creational.builder.improved.operation.HROperations;
-import com.theshubhamco.designpattern.creational.builder.improved.operation.ITAdminOperations;
-import com.theshubhamco.designpattern.creational.builder.improved.operation.PayrollOperations;
-import com.theshubhamco.designpattern.creational.builder.improved.operation.ReportingOperations;
-import com.theshubhamco.designpattern.creational.builder.improved.persistence.EmployeePersistenceStrategy;
-import com.theshubhamco.designpattern.creational.builder.improved.salary.SalaryCalculator;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.client.model.EmployeeReport;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.formatter.EmployeeFormatter;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.model.Employee;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.operation.HROperations;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.operation.ITAdminOperations;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.operation.PayrollOperations;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.operation.ReportingOperations;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.persistence.EmployeePersistenceStrategy;
+import com.theshubhamco.designpattern.creational.builder.stagedbuilder.salary.SalaryCalculator;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,7 +84,7 @@ public class EmployeeService implements
     @Override
     public EmployeeReport generateReport(Employee employee) {
         //generate report based on employee, returning dummy report for now
-        return new EmployeeReport.Builder()
+        return EmployeeReport.builder()
                 .name(employee.getName())
                 .type(employee.getType())
                 .department(employee.getDepartment())
