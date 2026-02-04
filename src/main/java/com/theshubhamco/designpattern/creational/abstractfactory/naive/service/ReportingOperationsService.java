@@ -26,7 +26,7 @@ public class ReportingOperationsService implements ReportingOperations {
                 .type(employee.getType())
                 .department(employee.getDepartment())
                 .salary(salaryCalculator.calculate(employee))
-                .deduction(employee.calculateDeduction())
+                .deductions(employee.calculateDeduction())
                 .build();
 
         return report;

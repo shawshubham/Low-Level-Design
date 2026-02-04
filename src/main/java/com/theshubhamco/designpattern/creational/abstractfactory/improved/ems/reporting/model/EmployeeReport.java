@@ -1,7 +1,7 @@
-package com.theshubhamco.designpattern.creational.abstractfactory.naive.client.model;
+package com.theshubhamco.designpattern.creational.abstractfactory.improved.ems.reporting.model;
 
-import com.theshubhamco.designpattern.creational.abstractfactory.naive.model.Department;
-import com.theshubhamco.designpattern.creational.abstractfactory.naive.model.EmployeeType;
+import com.theshubhamco.designpattern.creational.abstractfactory.improved.ems.employee.model.Department;
+import com.theshubhamco.designpattern.creational.abstractfactory.improved.ems.employee.model.EmployeeType;
 
 import java.time.LocalDate;
 
@@ -117,6 +117,7 @@ public class EmployeeReport {
     public LocalDate getJoiningDate() { return joiningDate; }
     public LocalDate getExitDate() { return exitDate; }
     public String getRemarks() { return remarks; }
+
     // Added to fetch toBuilder feature
     public Builder toBuilder() {
         return new Builder(this);

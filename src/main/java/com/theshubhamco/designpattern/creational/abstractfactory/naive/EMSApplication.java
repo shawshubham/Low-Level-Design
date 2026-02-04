@@ -1,7 +1,6 @@
 package com.theshubhamco.designpattern.creational.abstractfactory.naive;
 
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.HRClient;
-import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.PayrollClient;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.ReportingClient;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.model.DeliveryChannel;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.client.model.ExportFormat;
@@ -13,7 +12,6 @@ import com.theshubhamco.designpattern.creational.abstractfactory.naive.persisten
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.persistence.PersistenceType;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.salary.SalaryCalculator;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.HROperationsService;
-import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.PayrollOperationsService;
 import com.theshubhamco.designpattern.creational.abstractfactory.naive.service.ReportingOperationsService;
 
 import java.util.logging.Level;

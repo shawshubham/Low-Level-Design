@@ -4,21 +4,22 @@
 
 The Reporting team introduces a new requirement:
 
-> HR wants to export employee reports in different formats:
->
-> - PDF
-> - Excel
-> - HTML
+> HR wants to export employee reports in different formats.
 
-Each export format must produce a **complete and consistent report**, including:
+### Functional requirements
 
-- Report formatting rules
-- Layout/template
-- Output writer
-- Naming conventions
+- Export employee report in:
+    - PDF
+    - CSV
+    - HTML
+- Deliver the report via:
+    - Email
+    - Download
+- Optionally notify the user via:
+    - Email
+    - SMS
+    - Push notification
 
-And most importantly:
-
-> **❗ PDF components must never mix with Excel or HTML components**
-
-This is where naive factories break down.
+At first glance, this looks like a **classic Strategy problem**.  
+However, upon closer inspection, we notice that the report format and delivery method are **interdependent**.   
+For example, a PDF report might be best suited for email delivery, while a CSV report could be more appropriate for download.
