@@ -7,7 +7,7 @@ import com.theshubhamco.designpattern.creational.abstractfactory.improved.ems.re
 import java.util.Optional;
 
 public interface ReportBundleFactory {
-    ReportExportStrategy getExportStrategy();
-    DeliveryStrategy getDeliveryStrategy();
-    Optional<NotificationStrategy> getNotificationStrategy();
+    ReportExportStrategy createExportStrategy();
+    DeliveryStrategy createDeliveryStrategy();
+    Optional<NotificationStrategy> createNotificationStrategy();
 }

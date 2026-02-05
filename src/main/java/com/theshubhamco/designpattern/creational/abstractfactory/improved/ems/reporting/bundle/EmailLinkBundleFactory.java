@@ -14,17 +14,17 @@ import java.util.Optional;
 
 public class EmailLinkBundleFactory implements ReportBundleFactory {
     @Override
-    public ReportExportStrategy getExportStrategy() {
+    public ReportExportStrategy createExportStrategy() {
         return ReportExportStrategyFactory.getStrategy(ExportFormat.PDF);
     }
 
     @Override
-    public DeliveryStrategy getDeliveryStrategy() {
+    public DeliveryStrategy createDeliveryStrategy() {
         return DeliveryStrategyFactory.getStrategy(DeliveryChannel.EMAIL_LINK);
     }
 
     @Override
-    public Optional<NotificationStrategy> getNotificationStrategy() {
+    public Optional<NotificationStrategy> createNotificationStrategy() {
         return Optional.of(NotificationStrategyFactory.getStrategy(NotificationType.SMS));
     }
 }

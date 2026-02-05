@@ -9,7 +9,6 @@ public class ReportBundleFactoryProvider {
             case PORTAL_DOWNLOAD -> new PortalDownloadBundleFactory(request.getFormat());
             case EMAIL_ATTACHMENT -> new EmailAttachmentBundleFactory();
             case EMAIL_LINK -> new EmailLinkBundleFactory();
-            default -> throw new IllegalArgumentException("Unknown bundle type: " + request.getBundleType());
         };
     }
 }

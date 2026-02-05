@@ -20,17 +20,17 @@ public class PortalDownloadBundleFactory implements ReportBundleFactory{
     }
 
     @Override
-    public ReportExportStrategy getExportStrategy() {
+    public ReportExportStrategy createExportStrategy() {
         return ReportExportStrategyFactory.getStrategy(format);
     }
 
     @Override
-    public DeliveryStrategy getDeliveryStrategy() {
+    public DeliveryStrategy createDeliveryStrategy() {
         return DeliveryStrategyFactory.getStrategy(DeliveryChannel.DOWNLOAD);
     }
 
     @Override
-    public Optional<NotificationStrategy> getNotificationStrategy() {
+    public Optional<NotificationStrategy> createNotificationStrategy() {
         return Optional.of(NotificationStrategyFactory.getStrategy(NotificationType.PUSH));
     }
 }

@@ -44,13 +44,13 @@ public class ReportingOperationsService implements ReportingOperations {
         EmployeeReport report = generateReport(employeeData);
 
         // 2 + 3) Layout/Template + Export (format-specific)
-        ExportedReport exportedReport =  bundleFactory.getExportStrategy().export(report);
+        ExportedReport exportedReport =  bundleFactory.createExportStrategy().export(report);
 
         // 4) Delivery Channel-Specific Logic
-        DeliveryResult deliveryResult = bundleFactory.getDeliveryStrategy().deliver(exportedReport, request.getDeliveryAddress());
+        DeliveryResult deliveryResult = bundleFactory.createDeliveryStrategy().deliver(exportedReport, request.getDeliveryAddress());
 
         // 5) Notification Logic (Optional)
-        bundleFactory.getNotificationStrategy()
+        bundleFactory.createNotificationStrategy()
                 .ifPresent(strategy ->
                         strategy.notifyUser(deliveryResult, request.getNotificationTarget()));
 
